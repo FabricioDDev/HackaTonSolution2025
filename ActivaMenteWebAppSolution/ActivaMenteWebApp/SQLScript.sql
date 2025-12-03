@@ -89,3 +89,64 @@ CREATE TABLE ResultadoJuego (
     FOREIGN KEY (id_juego) REFERENCES Juego(id_juego),
     FOREIGN KEY (id_nivel) REFERENCES Nivel(id_nivel)
 );
+
+GO
+
+/* ============================================
+   INSERT: Personas
+   ============================================ */
+INSERT INTO Personas (nombre, apellido, sexo, nacionalidad, fecha_nacimiento, email)
+VALUES
+('Juan', 'Pérez', 'Masculino', 'Argentina', '2005-03-14', 'juan.perez@gmail.com'),
+('María', 'Gómez', 'Femenino', 'Argentina', '2006-07-22', 'maria.gomez@gmail.com');
+
+/* ============================================
+   INSERT: Usuario
+   ============================================ */
+INSERT INTO Usuario (idPersona, nombre_usuario, contraseña_hash, avatar)
+VALUES
+(1, 'juan123', 'HASH001', 'avatar1.png'),
+(2, 'mariaGG', 'HASH002', 'avatar2.png');
+
+/* ============================================
+   INSERT: Juego
+   ============================================ */
+INSERT INTO Juego (nombre, descripcion)
+VALUES
+('Cultura General', 'Preguntas básicas sobre historia, geografía y ciencia.'),
+('Matemática Básica', 'Ejercicios simples para practicar números y operaciones.');
+
+/* ============================================
+   INSERT: Nivel
+   ============================================ */
+INSERT INTO Nivel (id_juego, numero_nivel, dificultad)
+VALUES
+(1, 1, 'Fácil'),
+(1, 2, 'Intermedio'),
+(2, 1, 'Fácil');
+
+/* ============================================
+   INSERT: Pregunta
+   ============================================ */
+INSERT INTO Pregunta (id_juego, id_nivel, pregunta, opcion1, opcion2, opcion3, opcion4, opcion_correcta)
+VALUES
+-- Juego Cultura General - Nivel 1
+(1, 1, '¿Cuál es el océano más grande del mundo?', 'Atlántico', 'Pacífico', 'Índico', 'Ártico', 2),
+(1, 1, '¿Quién pintó La Mona Lisa?', 'Picasso', 'Van Gogh', 'Da Vinci', 'Miguel Ángel', 3),
+
+-- Juego Cultura General - Nivel 2
+(1, 2, '¿En qué año llegó el hombre a la Luna?', '1969', '1972', '1955', '1965', 1),
+
+-- Juego Matemática Básica - Nivel 1
+(2, 3, '¿Cuánto es 12 + 15?', '27', '22', '31', '25', 1),
+(2, 3, '¿Cuánto es 9 × 3?', '18', '27', '21', '24', 2);
+
+/* ============================================
+   INSERT: ResultadoJuego (simulación de partidas)
+   ============================================ */
+INSERT INTO ResultadoJuego (id_usuario, id_juego, id_nivel, puntaje_obtenido)
+VALUES
+(1, 1, 1, 80),   -- Juan jugó Cultura General Nivel 1
+(1, 2, 3, 90),   -- Juan jugó Matemática Nivel 1
+(2, 1, 1, 70);   -- María jugó Cultura General Nivel 1
+
