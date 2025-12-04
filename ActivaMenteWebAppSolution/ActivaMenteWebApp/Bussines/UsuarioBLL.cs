@@ -8,15 +8,15 @@ namespace Business
     {
         private readonly UsuarioDAO dao = new UsuarioDAO();
 
-        public Usuario Login(string username, string password)
+        public bool Login(string username, string password, ref Usuario userEncontrado)
         {
             if (string.IsNullOrWhiteSpace(username) || string.IsNullOrWhiteSpace(password))
-                return null;
+                return false;
 
-            return dao.Login(username, password);
+            return dao.Login(username, password, ref userEncontrado);
         }
 
-        public void Register(Usuario u)
+      /*  public void Register(Usuario u)
         {
             if (string.IsNullOrWhiteSpace(u.NombreUsuario))
                 throw new Exception("Usuario requerido");
@@ -27,6 +27,6 @@ namespace Business
             u.FechaRegistro = DateTime.Now;
 
             dao.Insert(u);
-        }
+        }*/
     }
 }

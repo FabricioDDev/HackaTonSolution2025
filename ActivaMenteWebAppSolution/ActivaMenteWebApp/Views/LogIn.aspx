@@ -9,8 +9,12 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <div>
-        </div>
+        <label>Nombre de usuario</label>
+        <asp:TextBox ID="TxtUserName" runat="server"></asp:TextBox>
+        <label>Contraseña</label>
+        <asp:TextBox ID="TxtPass" runat="server"></asp:TextBox>
+        <asp:Button ID="BtnLogIn" runat="server" Text="Confirmar" OnClick="BtnLogIn_Click" />
+        <asp:Label ID="LblWarning" runat="server" Text=""></asp:Label>
     </form>
 </body>
 </html>

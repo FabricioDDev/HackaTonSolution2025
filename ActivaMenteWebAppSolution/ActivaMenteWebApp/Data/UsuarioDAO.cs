@@ -7,35 +7,49 @@ namespace Data
 {
     public class UsuarioDAO
     {
-        public Usuario Login(string usuario, string contraseña)
+        public bool Login(string userName, string pass, ref Usuario userEncontrado)
         {
-            DataAccess db = new DataAccess();
+            var db = new DataAccess();
+
             try
             {
-                db.Query("SELECT * FROM Usuario WHERE nombre_usuario=@u AND contraseña=@c AND activo=1");
-                db.Parameters("@u", usuario);
-                db.Parameters("@c", contraseña);
+                db.Query(@"SELECT id_usuario, idPersona, nombre_usuario, contrasenia, avatar, fecha_registro
+                   FROM Usuario
+                   WHERE nombre_usuario = @u AND contrasenia = @c");
+
+                db.Parameters("@u", userName);
+                db.Parameters("@c", pass);
 
                 db.Read();
 
-                if (db.Reader.Read())
+                if (!db.Reader.Read())
                 {
-                    return new Usuario
-                    {
-                        IdUsuario = (int)db.Reader["id_usuario"],
-                        IdPersona = (int)db.Reader["idPersona"],
-                        NombreUsuario = db.Reader["nombre_usuario"].ToString(),
-                        Contrasenia = db.Reader["contraseña"].ToString(),
-                        Avatar = db.Reader["avatar"].ToString(),
-                        FechaRegistro = (DateTime)db.Reader["fecha_registro"],
-                    };
+                    userEncontrado = null;   // asignación explícita cuando no hay coincidencia
+                    return false;
                 }
-                return null;
+
+                var u = new Usuario
+                {
+                    IdUsuario = (int)db.Reader["id_usuario"],
+                    IdPersona = (int)db.Reader["idPersona"],
+                    NombreUsuario = db.Reader["nombre_usuario"].ToString(),
+                    Contrasenia = db.Reader["contrasenia"].ToString(),
+                    Avatar = db.Reader["avatar"].ToString(),
+                    FechaRegistro = (DateTime)db.Reader["fecha_registro"]
+                };
+
+                userEncontrado = u;  // ✔️ asigna por referencia
+
+                return true;
             }
-            finally { db.Close(); }
+            finally
+            {
+                db.Close();
+            }
         }
 
-        public void Insert(Usuario u)
+
+     /*   public void Insert(Usuario u)
         {
             DataAccess db = new DataAccess();
             try
@@ -52,6 +66,6 @@ namespace Data
                 db.Execute();
             }
             finally { db.Close(); }
-        }
+        }*/
     }
 }

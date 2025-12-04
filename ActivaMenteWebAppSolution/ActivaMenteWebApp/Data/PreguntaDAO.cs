@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 using ActivaMenteWebApp.Entities;
 using DB;
-using Entities;
 
 namespace Data
 {
