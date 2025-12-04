@@ -75,7 +75,15 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Bussines\PersonaBLL.cs" />
+    <Compile Include="Data\CategoriaDAO.cs" />
     <Compile Include="Data\DataAccess.cs" />
+    <Compile Include="Data\JuegoDAO.cs" />
+    <Compile Include="Data\NivelDAO.cs" />
+    <Compile Include="Data\PersonaDAO.cs" />
+    <Compile Include="Data\PreguntaDAO.cs" />
+    <Compile Include="Data\ResultadoJuegoDAO.cs" />
+    <Compile Include="Data\UsuarioDAO.cs" />
     <Compile Include="Entities\Categoria.cs" />
     <Compile Include="Entities\Juego.cs" />
     <Compile Include="Entities\Nivel.cs" />
@@ -130,7 +138,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Bussines\" />
     <Folder Include="Views\Styles\" />
   </ItemGroup>
   <PropertyGroup>

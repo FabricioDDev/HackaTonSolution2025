@@ -1,141 +1,93 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data.SqlClient;
-using System.Data;
-using System.Linq;
-using System.Web;
 
-namespace ActivaMenteWebApp.Data
+namespace DB
 {
     public class DataAccess
     {
-        private const string cadenaConexion = @"Data Source=localhost\SQLEXPRESS;Initial Catalog=SistemaClinicaMedicaDB;Integrated Security=True;";
+        private SqlConnection connection;
+        private SqlCommand command;
+        private SqlDataReader reader;
 
-        public void DataAaccess()
+        public SqlDataReader Reader
         {
-            SqlConnection Conexion = ObtenerConexion();
+            get { return reader; }
         }
 
-        public SqlConnection ObtenerConexion()
+        public DataAccess()
         {
-            SqlConnection cn = new SqlConnection(cadenaConexion);
+            connection = new SqlConnection("server=DESKTOP-J1JBL3C\\SQLEXPRESS; database=MedicalSystem_DB; integrated security = true");
+            command = new SqlCommand();
+        }
+
+        // -----------------------------------------------------------
+        // SETTERS DE CONSULTA
+        // -----------------------------------------------------------
+        public void Query(string query)
+        {
+            command.Parameters.Clear();          // evita contaminación entre consultas
+            command.CommandType = System.Data.CommandType.Text;
+            command.CommandText = query;
+        }
+
+        public void SP(string sp)
+        {
+            command.Parameters.Clear();          // idem
+            command.CommandType = System.Data.CommandType.StoredProcedure;
+            command.CommandText = sp;
+        }
+
+        // -----------------------------------------------------------
+        // EJECUCIÓN
+        // -----------------------------------------------------------
+        public void Read()
+        {
+            command.Connection = connection;
             try
             {
-                cn.Open();
-                return cn;
+                connection.Open();
+                reader = command.ExecuteReader();
             }
-            catch (Exception ex)
+            catch
             {
-                return null;
+                connection.Close();
+                throw;
             }
         }
 
-        public SqlDataReader GetData(string consultaSQL)
+        public void Execute()
         {
-            //establecer la conexion con la base de datos sql server
-            SqlConnection sqlConnection = new SqlConnection(cadenaConexion);
-            sqlConnection.Open();
-
-            //Ejecutar consulta
-            SqlCommand sqlCommand = new SqlCommand(consultaSQL, sqlConnection);
-
-            SqlDataReader reader = sqlCommand.ExecuteReader();
-
-
-            return reader;
-        }
-        public int ejecutarTransaccion(string consultaSQL)
-        {
-            /// ESTABLECER UNA CONEXION A LA BASE DE DATOS SQL SERVER
-            SqlConnection sqlConnection = new SqlConnection(cadenaConexion);
-            sqlConnection.Open();
-
-            SqlCommand sqlCommand = new SqlCommand(consultaSQL, sqlConnection);
-            /// EJECUTAR CONSULTA
-            int filasAfectadas = sqlCommand.ExecuteNonQuery(); /// INSERT, UPDATE, DELETE
-
-            sqlConnection.Close();
-
-            return filasAfectadas;
-        }
-
-        private SqlDataAdapter ObtenerAdaptador(string consultaSQL, SqlConnection conexion)
-        {
-            SqlDataAdapter adaptador;
+            command.Connection = connection;
             try
             {
-                adaptador = new SqlDataAdapter(consultaSQL, conexion);
-                return adaptador;
+                connection.Open();
+                command.ExecuteNonQuery();
             }
-            catch (Exception ex)
+            catch
             {
-                return null;
+                connection.Close();
+                throw;
             }
         }
 
-        public DataTable obtenerTabla(string NombreTabla, string sql)
+        // -----------------------------------------------------------
+        // PARÁMETROS
+        // -----------------------------------------------------------
+        public void Parameters(string name, object value)
         {
-            DataSet ds = new DataSet();
-            SqlConnection conexion = new SqlConnection(cadenaConexion);
-            SqlDataAdapter adp = ObtenerAdaptador(sql, conexion);
-            adp.Fill(ds, NombreTabla);
-            conexion.Close();
-            return ds.Tables[NombreTabla];
+            command.Parameters.AddWithValue(name, value);
         }
 
-        public Boolean existe(String consulta)
+        // -----------------------------------------------------------
+        // CLOSE
+        // -----------------------------------------------------------
+        public void Close()
         {
-            Boolean estado = false;
-            SqlConnection Conexion = ObtenerConexion();
-            SqlCommand cmd = new SqlCommand(consulta, Conexion);
-            SqlDataReader datos = cmd.ExecuteReader();
-            if (datos.Read())
-            {
-                estado = true;
-            }
-            return estado;
-        }
+            if (reader != null && !reader.IsClosed)
+                reader.Close();
 
-        public int EjecutarProcedimientoAlmacenado(SqlCommand cmd, String NombreSP)
-        {
-            int FilasCambiadas = 0;
-
-            SqlConnection Conexion = ObtenerConexion();
-            SqlTransaction trans = Conexion.BeginTransaction();
-
-            try // Agrego un trycatch para que no se cargue la sucursal si hay un error
-            {
-                cmd.Connection = Conexion;
-                cmd.Transaction = trans;
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.CommandText = NombreSP;
-
-                FilasCambiadas = cmd.ExecuteNonQuery();
-
-                trans.Commit(); // Confirma la transacción si todo sale bien
-
-                Conexion.Close();
-            }
-            catch (Exception ex)
-            {
-                trans.Rollback();   // Deshace la transacción en caso de error
-                throw; // mando el error hacia arriba para que lo reciba el nivel superior
-            }
-
-
-            return FilasCambiadas;
-        }
-        public int ObtenerMaximo(string consulta)
-        {
-            int max = 0;
-            SqlConnection cn = ObtenerConexion();
-            SqlCommand cmd = new SqlCommand(consulta, cn);
-            SqlDataReader dr = cmd.ExecuteReader();
-            if (dr.Read())
-            {
-                max = Convert.ToInt32(dr[0].ToString());
-            }
-            return max;
+            if (connection.State == System.Data.ConnectionState.Open)
+                connection.Close();
         }
     }
 }
