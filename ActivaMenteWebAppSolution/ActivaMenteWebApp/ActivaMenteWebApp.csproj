@@ -75,7 +75,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Bussines\CategoriaBLL.cs" />
+    <Compile Include="Bussines\JuegoBLL.cs" />
+    <Compile Include="Bussines\NivelBLL.cs" />
     <Compile Include="Bussines\PersonaBLL.cs" />
+    <Compile Include="Bussines\PreguntaBLL.cs" />
+    <Compile Include="Bussines\ResultadoJuegoBLL.cs" />
+    <Compile Include="Bussines\UsuarioBLL.cs" />
     <Compile Include="Data\CategoriaDAO.cs" />
     <Compile Include="Data\DataAccess.cs" />
     <Compile Include="Data\JuegoDAO.cs" />

@@ -1,37 +1,28 @@
 ﻿using System;
 using System.Collections.Generic;
 using ActivaMenteWebApp.Entities;
-using ActivaMenteWebApp.Data;
+using Data;
 
-namespace Negocio
+namespace Business
 {
-    public class PersonaBLL
+    public class PersonasBLL
     {
-        private readonly PersonaDAO personaDAO;
+        private readonly PersonasDAO dao = new PersonasDAO();
 
-        public PersonaBLL()
+        public List<Persona> GetAll()
         {
-            personaDAO = new PersonaDAO();
+            return dao.GetAll();
         }
 
-        public int CrearPersona(Persona p)
+        public void Add(Persona p)
         {
-            return personaDAO.Insertar(p);
-        }
+            if (string.IsNullOrWhiteSpace(p.Nombre))
+                throw new Exception("Nombre requerido");
 
-        public Persona ObtenerPorId(int id)
-        {
-            return personaDAO.ObtenerPorId(id);
-        }
+            if (string.IsNullOrWhiteSpace(p.Apellido))
+                throw new Exception("Apellido requerido");
 
-        public Persona ObtenerPorEmail(string email)
-        {
-            return personaDAO.ObtenerPorEmail(email);
-        }
-
-        public List<Persona> Listar()
-        {
-            return personaDAO.Listar();
+            dao.Insert(p);
         }
     }
 }
