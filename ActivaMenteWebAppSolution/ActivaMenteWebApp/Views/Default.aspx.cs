@@ -21,7 +21,7 @@ namespace ActivaMenteWebApp.Views
             {
                 Usuario user = new Usuario();
                 user = (Usuario)Session["Usuario"];
-                LblUserName.Text = user.NombreUsuario;
+                LblUserName.Text = user.NombreUsuario + "!";
             }
         }
 
@@ -34,6 +34,12 @@ namespace ActivaMenteWebApp.Views
         protected void BtnProfile_Click(object sender, EventArgs e)
         {
             Response.Redirect("~/Views/Profile.aspx", false);
+        }
+
+        protected void BtnGame1_Click(object sender, EventArgs e)
+        {
+            int gameId = 1;
+            Response.Redirect($"~/Views/LevelGame.aspx?game={gameId}", false);
         }
     }
 }

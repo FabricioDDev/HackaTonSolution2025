@@ -6,16 +6,16 @@ namespace Data
 {
     public class PreguntaDAO
     {
-        public List<Pregunta> GetByNivel(int idNivel)
+        public List<Pregunta> ObtenerPreguntas(int idGame, int level)
         {
             List<Pregunta> list = new List<Pregunta>();
             DataAccess db = new DataAccess();
 
             try
             {
-                db.Query("SELECT * FROM Pregunta WHERE id_nivel=@n");
-                db.Parameters("@n", idNivel);
-
+                db.Query("SELECT * FROM Pregunta WHERE id_juego=@idGame and id_nivel=@idLevel;");
+                db.Parameters("@idGame", idGame);
+                db.Parameters("@idLevel", level);
                 db.Read();
 
                 while (db.Reader.Read())
@@ -30,7 +30,8 @@ namespace Data
                         Opcion1 = db.Reader["opcion1"].ToString(),
                         Opcion2 = db.Reader["opcion2"].ToString(),
                         Opcion3 = db.Reader["opcion3"].ToString(),
-                        Opcion4 = db.Reader["opcion4"].ToString()
+                        Opcion4 = db.Reader["opcion4"].ToString(),
+                        OpcionCorrecta = (int)db.Reader["opcion_correcta"]
                     };
                     list.Add(p);
                 }

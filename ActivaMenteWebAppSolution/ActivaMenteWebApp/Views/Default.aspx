@@ -14,8 +14,8 @@
         <asp:Button ID="BtnProfile" runat="server" Text="Profile" OnClick="BtnProfile_Click" />
         <label>dashboard</label>
         <asp:Button ID="BtnRanking" runat="server" Text="Ranking" />
-        <asp:Button ID="BtnGame1" runat="server" Text="Game 1" />
-        <asp:Button ID="BtnGame2" runat="server" Text="Game 2" />
+        <asp:Button ID="BtnGame1" runat="server" Text="Game 1" OnClick="BtnGame1_Click" />
+        <asp:Button ID="BtnGame2" runat="server" Text="Proximamente mas niveles!" Enabled="false" />
 
     </form>
 </body>

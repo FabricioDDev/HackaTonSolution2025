@@ -7,26 +7,25 @@ namespace Data
 {
     public class ResultadoJuegoDAO
     {
-        public void Insert(ResultadoJuego r)
+       public void Insert(ResultadoJuego r)
         {
             DataAccess db = new DataAccess();
 
             try
             {
-                db.Query("INSERT INTO ResultadoJuego (id_usuario, id_juego, id_nivel, puntaje_obtenido, fecha) " +
-                         "VALUES (@u, @j, @n, @p, @f)");
+                db.Query("INSERT INTO ResultadoJuego (id_usuario, id_juego, id_nivel, puntaje_obtenido) " +
+                         "VALUES (@u, @j, @n, @p)");
 
                 db.Parameters("@u", r.IdUsuario);
                 db.Parameters("@j", r.IdJuego);
                 db.Parameters("@n", r.IdNivel);
                 db.Parameters("@p", r.PuntajeObtenido);
-                db.Parameters("@f", r.Fecha);
 
                 db.Execute();
             }
             finally { db.Close(); }
         }
-
+      
         public List<ResultadoJuego> GetByUser(int idUsuario)
         {
             List<ResultadoJuego> list = new List<ResultadoJuego>();

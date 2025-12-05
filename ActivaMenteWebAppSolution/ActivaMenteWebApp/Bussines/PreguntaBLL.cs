@@ -9,12 +9,9 @@ namespace Business
     {
         private readonly PreguntaDAO dao = new PreguntaDAO();
 
-        public List<Pregunta> GetByNivel(int idNivel)
+        public List<Pregunta> ObtenerPreguntas(int idGame, int level)
         {
-            if (idNivel <= 0)
-                throw new Exception("Nivel inválido");
-
-            return dao.GetByNivel(idNivel);
+            return dao.ObtenerPreguntas(idGame, level);
         }
     }
 }

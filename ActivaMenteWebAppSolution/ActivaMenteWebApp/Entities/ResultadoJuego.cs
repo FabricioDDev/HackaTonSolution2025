@@ -14,9 +14,5 @@ namespace ActivaMenteWebApp.Entities
         public int PuntajeObtenido { get; set; }
         public DateTime Fecha { get; set; }
 
-        public Usuario Usuario { get; set; }
-        public Juego Juego { get; set; }
-        public Nivel Nivel { get; set; }
     }
-
 }

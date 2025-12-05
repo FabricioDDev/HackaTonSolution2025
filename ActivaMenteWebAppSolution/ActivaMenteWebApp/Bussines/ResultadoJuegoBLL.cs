@@ -9,7 +9,7 @@ namespace Business
     {
         private readonly ResultadoJuegoDAO dao = new ResultadoJuegoDAO();
 
-        public void RegistrarResultado(ResultadoJuego r)
+       public void RegistrarResultado(ResultadoJuego r)
         {
             if (r.IdUsuario <= 0 || r.IdJuego <= 0 || r.IdNivel <= 0)
                 throw new Exception("Datos inválidos");

@@ -10,6 +10,16 @@
 <body>
     <form id="form1" runat="server">
         <div>
+            <asp:Label ID="lblPregunta" runat="server" Text=""></asp:Label>
+
+            <br /><br />
+
+            <asp:RadioButtonList ID="rdbOpciones" runat="server"></asp:RadioButtonList>
+
+            <br />
+
+            <asp:Button ID="btnResponder" runat="server" Text="Responder" OnClick="btnResponder_Click" />
+
         </div>
     </form>
 </body>

@@ -70,8 +70,11 @@
     <Content Include="Views\Default.aspx" />
     <Content Include="Views\Game1.aspx" />
     <Content Include="Views\Game2.aspx" />
+    <Content Include="Views\GameResult.aspx" />
+    <Content Include="Views\LevelGame.aspx" />
     <Content Include="Views\LogIn.aspx" />
     <Content Include="Views\Profile.aspx" />
+    <Content Include="Views\Ranking.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -119,6 +122,20 @@
     <Compile Include="Views\Game2.aspx.designer.cs">
       <DependentUpon>Game2.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Views\GameResult.aspx.cs">
+      <DependentUpon>GameResult.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\GameResult.aspx.designer.cs">
+      <DependentUpon>GameResult.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\LevelGame.aspx.cs">
+      <DependentUpon>LevelGame.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\LevelGame.aspx.designer.cs">
+      <DependentUpon>LevelGame.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Views\LogIn.aspx.cs">
       <DependentUpon>LogIn.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -132,6 +149,13 @@
     </Compile>
     <Compile Include="Views\Profile.aspx.designer.cs">
       <DependentUpon>Profile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Ranking.aspx.cs">
+      <DependentUpon>Ranking.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Ranking.aspx.designer.cs">
+      <DependentUpon>Ranking.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
