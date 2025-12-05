@@ -9,9 +9,14 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <div>
-            <label>dashboard</label>
-        </div>
+        <asp:Label ID="LblUserName" runat="server" Text="user"></asp:Label>
+        <asp:Button ID="BtnLogOut" runat="server" Text="Cerrar sesion" OnClick="BtnLogOut_Click" />
+        <asp:Button ID="BtnProfile" runat="server" Text="Profile" OnClick="BtnProfile_Click" />
+        <label>dashboard</label>
+        <asp:Button ID="BtnRanking" runat="server" Text="Ranking" />
+        <asp:Button ID="BtnGame1" runat="server" Text="Game 1" />
+        <asp:Button ID="BtnGame2" runat="server" Text="Game 2" />
+
     </form>
 </body>
 </html>

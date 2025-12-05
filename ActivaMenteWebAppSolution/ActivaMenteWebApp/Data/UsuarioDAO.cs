@@ -35,7 +35,7 @@ namespace Data
                     NombreUsuario = db.Reader["nombre_usuario"].ToString(),
                     Contrasenia = db.Reader["contrasenia"].ToString(),
                     Avatar = db.Reader["avatar"].ToString(),
-                    FechaRegistro = (DateTime)db.Reader["fecha_registro"]
+                    FechaRegistro = Convert.ToDateTime(db.Reader["fecha_registro"])
                 };
 
                 userEncontrado = u;  // ✔️ asigna por referencia
@@ -49,23 +49,43 @@ namespace Data
         }
 
 
-     /*   public void Insert(Usuario u)
+        /*   public void Insert(Usuario u)
+           {
+               DataAccess db = new DataAccess();
+               try
+               {
+                   db.Query("INSERT INTO Usuario (idPersona, nombre_usuario, contraseña, avatar, fecha_registro, activo) " +
+                            "VALUES (@p, @u, @c, @a, @f, @ac)");
+
+                   db.Parameters("@p", u.IdPersona);
+                   db.Parameters("@u", u.NombreUsuario);
+                   db.Parameters("@c", u.Contrasenia);
+                   db.Parameters("@a", u.Avatar);
+                   db.Parameters("@f", u.FechaRegistro);
+
+                   db.Execute();
+               }
+               finally { db.Close(); }
+           }*/
+        public bool Update(Usuario usuario)
         {
             DataAccess db = new DataAccess();
             try
             {
-                db.Query("INSERT INTO Usuario (idPersona, nombre_usuario, contraseña, avatar, fecha_registro, activo) " +
-                         "VALUES (@p, @u, @c, @a, @f, @ac)");
+                db.Query("UPDATE Usuario SET nombre_usuario = @nombreUsuario, avatar = @avatar WHERE id_usuario = @id;");
 
-                db.Parameters("@p", u.IdPersona);
-                db.Parameters("@u", u.NombreUsuario);
-                db.Parameters("@c", u.Contrasenia);
-                db.Parameters("@a", u.Avatar);
-                db.Parameters("@f", u.FechaRegistro);
+                db.Parameters("@nombreUsuario", usuario.NombreUsuario);
+                db.Parameters("@avatar", usuario.Avatar);
+                db.Parameters("@id", usuario.IdUsuario);
 
                 db.Execute();
+                return true;
             }
-            finally { db.Close(); }
-        }*/
+            finally
+            {
+                db.Close();
+            }
+        }
+
     }
 }

@@ -28,5 +28,9 @@ namespace Business
 
             dao.Insert(u);
         }*/
+      public bool UpdateUsuario(Usuario usuario)
+        {
+            return dao.Update(usuario);
+        }
     }
 }

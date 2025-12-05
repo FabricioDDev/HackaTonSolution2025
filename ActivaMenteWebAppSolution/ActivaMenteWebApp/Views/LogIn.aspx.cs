@@ -19,9 +19,12 @@ namespace ActivaMenteWebApp.Views
         protected void BtnLogIn_Click(object sender, EventArgs e)
         {
             UsuarioBLL usuarioB = new UsuarioBLL();
+            PersonasBLL personaB = new PersonasBLL();
             Usuario usuario = new Usuario();
+
             if(usuarioB.Login(TxtUserName.Text, TxtPass.Text, ref usuario))
             {
+                usuario.Persona = personaB.GetPersonaById(usuario.IdPersona);
                 Session["Usuario"] = usuario;
 
                 // Redireccionar a Default.aspx

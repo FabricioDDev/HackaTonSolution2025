@@ -15,7 +15,10 @@ namespace ActivaMenteWebApp.Entities
         public DateTime FechaRegistro { get; set; }
         public int PuntosTotales { get; set; }
 
-        public Persona Persona { get; set; }
+        public Persona Persona{ get; set; }
+        public Usuario() { 
+        Persona = new Persona();
+        }
     }
 
 }

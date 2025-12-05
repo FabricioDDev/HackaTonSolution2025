@@ -24,5 +24,12 @@ namespace Business
 
             dao.Insert(p);
         }
+        public Persona GetPersonaById(int idPersona) {
+            return dao.GetPersonaById(idPersona);
+        }
+        public bool UpdatePersona(Persona persona)
+        {
+            return dao.Update(persona);
+        }
     }
 }
