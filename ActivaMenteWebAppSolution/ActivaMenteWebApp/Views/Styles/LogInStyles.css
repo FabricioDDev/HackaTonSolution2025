@@ -1,0 +1,285 @@
+﻿/* ===== PALETA =====
+#2CD3DB  (Celeste vibrante - Inicio Body)
+#2CDBA9  (Verde aqua)
+#2C9BDB  (Celeste medio - Fin Body)
+#2C63DB  (Azul profundo)
+#104e8b  (Azul Oscuro Header/Footer)
+===================== */
+
+/* Fondo general */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    /* El body va de Celeste Vibrante a Celeste Medio */
+    background: linear-gradient(135deg, #2CD3DB, #2C9BDB);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Encabezado */
+header {
+    /* DEGRADADO SUAVE: De Azul Oscuro (#104e8b) a Celeste Vibrante (#2CD3DB) */
+    /* El segundo color coincide con el inicio del body para borrar la linea */
+    background: linear-gradient(to bottom, #104e8b 20%, #2CD3DB 100%);
+    border-bottom: none;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Sombra suave para dar profundidad sobre el cielo */
+    box-shadow: 0px 4px 15px rgba(0,0,0,0.1);
+    z-index: 10; /* Asegura que quede por encima */
+}
+
+    header img {
+        max-height: 60px;
+        width: auto;
+        /* Efecto glassmorphism sutil en el logo */
+        border-radius: 15px;
+        background: rgba(255, 255, 255, 0.2);
+        padding: 5px;
+        backdrop-filter: blur(5px);
+    }
+
+/* Contenido principal */
+main {
+    flex: 1; /* Ocupa todo el espacio disponible */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px; /* Un poco más de aire arriba y abajo */
+    box-sizing: border-box;
+    /* Fondo de nubes sutil si la imagen carga */
+    background-image: url('../Multi/backgrd.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Contenedor flexible */
+.container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: center;
+    align-items: stretch; /* Estira las cajas para que tengan la misma altura visual */
+    width: 100%;
+    max-width: 900px;
+    box-sizing: border-box;
+}
+
+/* Estilos comunes para las cajas (Card y Presentation) */
+.presentation, .card {
+    flex: 1 1 300px; /* Base flexible */
+    background: rgba(255, 255, 255, 0.95); /* Blanco casi puro */
+    padding: 35px;
+    border-radius: 20px;
+    box-shadow: 0px 10px 25px rgba(0, 77, 125, 0.15); /* Sombra azulada suave */
+    border: 3px solid rgba(255, 255, 255, 0.5); /* Borde semitransparente */
+    box-sizing: border-box;
+    min-width: 280px; /* Evita que se rompa en móbiles muy angostos */
+    backdrop-filter: blur(10px); /* Efecto moderno si el navegador lo soporta */
+}
+
+/* Presentación */
+.presentation {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+    .presentation p {
+        font-size: 1.1rem;
+        color: #2C63DB;
+        line-height: 1.5;
+        font-weight: 500;
+        margin-top: 10px;
+    }
+
+    /* Contenedor de la imagen */
+    .presentation .img {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+
+        /* Imagen dentro del contenedor */
+        .presentation .img img {
+            max-height: 160px;
+            width: auto;
+            filter: drop-shadow(0px 5px 5px rgba(0,0,0,0.1)); /* Sombra a la imagen misma */
+            transition: transform 0.3s ease;
+        }
+
+    /* Efecto hover divertido en la imagen */
+    .presentation:hover .img img {
+        transform: scale(1.05) rotate(2deg);
+    }
+
+/* Tarjeta de login */
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Título */
+.title {
+    font-size: 26px;
+    font-weight: 800; /* Extra bold */
+    color: #2C63DB;
+    margin-bottom: 25px;
+    text-align: center;
+    letter-spacing: -0.5px;
+}
+
+/* Labels */
+label {
+    font-weight: 700;
+    color: #455A64; /* Un gris azulado oscuro es más legible que azul puro */
+    display: block;
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+/* Inputs */
+.input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #E0E0E0;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    font-size: 15px;
+    outline: none;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+    background: #F9FAFB;
+    font-family: 'Montserrat', sans-serif;
+}
+
+    .input:focus {
+        border-color: #2CD3DB;
+        background: #fff;
+        box-shadow: 0px 4px 10px rgba(44, 211, 219, 0.2);
+    }
+
+/* Botón */
+.btn {
+    width: 100%;
+    background: #2CDBA9;
+    color: #fff;
+    padding: 14px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+    box-shadow: 0px 4px 0px #1EA882; /* Efecto 3D botón presionado */
+}
+
+    .btn:hover {
+        background: #23b58c;
+        transform: translateY(2px); /* Baja un poco al presionar */
+        box-shadow: 0px 2px 0px #1EA882;
+    }
+
+/* Link de Registro (Nuevo estilo) */
+#LkbSignUp {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    color: #2C63DB;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    transition: color 0.2s;
+}
+
+    #LkbSignUp:hover {
+        color: #104e8b;
+        text-decoration: underline;
+    }
+
+/* Advertencias */
+.warning {
+    margin-top: 15px;
+    display: block;
+    color: #ff5252;
+    font-weight: bold;
+    text-align: center;
+    font-size: 13px;
+    background: #ffebee;
+    padding: 5px;
+    border-radius: 8px;
+}
+
+/* Pie de página */
+footer {
+    /* DEGRADADO SUAVE: De Celeste Medio (#2C9BDB) a Azul Oscuro (#104e8b) */
+    /* El primer color coincide con el fin del body */
+    background: linear-gradient(to bottom, #2C9BDB 0%, #104e8b 100%);
+    border-top: none;
+    padding: 20px;
+    text-align: center;
+    color: white;
+    z-index: 10;
+}
+
+    footer h2 {
+        font-size: 14px;
+        font-weight: 400;
+        opacity: 0.9;
+        margin: 0;
+    }
+
+/* ===== RESPONSIVO ===== */
+@media (max-width: 768px) {
+    main {
+        padding: 20px 15px; /* Menos padding en tablets/movil */
+    }
+
+    .container {
+        flex-direction: column; /* Apila verticalmente */
+        gap: 25px;
+        align-items: center; /* Centra las cajas */
+    }
+
+    .card, .presentation {
+        width: 100%; /* Ocupa todo el ancho posible */
+        max-width: 450px; /* Pero no te pases de ancho */
+        flex: none; /* Desactiva el flex grow/shrink para evitar deformaciones */
+    }
+
+    header img {
+        max-height: 50px;
+    }
+}
+
+@media (max-width: 480px) {
+    .title {
+        font-size: 22px;
+    }
+
+    .presentation, .card {
+        padding: 25px; 
+    }
+
+    .input {
+        padding: 10px;
+    }
+
+    .btn {
+        font-size: 14px;
+        padding: 12px;
+    }
+}

@@ -33,15 +33,6 @@ namespace ActivaMenteWebApp.Views
         protected global::System.Web.UI.WebControls.Label LblUserName;
 
         /// <summary>
-        /// Control BtnLogOut.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BtnLogOut;
-
-        /// <summary>
         /// Control BtnProfile.
         /// </summary>
         /// <remarks>
@@ -49,6 +40,15 @@ namespace ActivaMenteWebApp.Views
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button BtnProfile;
+
+        /// <summary>
+        /// Control BtnLogOut.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button BtnLogOut;
 
         /// <summary>
         /// Control LblTotalPoints.

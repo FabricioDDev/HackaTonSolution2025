@@ -1,0 +1,209 @@
+﻿/* ===== VARIABLES ===== */
+:root {
+    --primary: #2CD3DB;
+    --primary-dark: #2C9BDB;
+    --secondary: #2CDBA9;
+    --bg-card: #ffffff;
+    --text-main: #1f2937;
+    --text-muted: #6b7280;
+    --radius: 16px;
+    --shadow-md: 0 8px 20px rgba(0,0,0,0.08);
+    --btn-shadow: 0 4px 0 #1EA882;
+}
+
+/* ===== RESET ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* ===== BODY ===== */
+body {
+    display: flex;
+    flex-direction: column;;
+    justify-content: flex-start;
+    align-items: center;
+    min-height: 200vh;
+    width: 100%;
+    background: linear-gradient(135deg, #2CD3DB, #2C9BDB);
+    padding: 0;
+    color: var(--text-main);
+}
+p{
+    margin:5px;
+}
+
+/* ===== HEADER ===== */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    min-height: 15vh;
+    padding: 1.5rem 2rem;
+    background: linear-gradient(to bottom, #104e8b 20%, #2CD3DB 100%);
+    color: white;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    border-radius: 0 0 var(--radius) var(--radius);
+    z-index: 10;
+    position:fixed;
+    top:0px;
+    left:0px;
+}
+
+    header span {
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: #ffffff;
+    }
+
+/* ===== MAIN ===== */
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    flex: 1;
+    gap: 3rem; /* Espacio consistente entre tarjetas */
+    padding: 2rem 0; /* Espaciado vertical interno */
+    margin-top: 15%; /* Se elimina el negativo */
+    z-index: 5;
+}
+
+/* ===== CARD ===== */
+.card {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-md);
+    padding: 2rem;
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-top:10px;
+}
+
+    .card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 16px 30px rgba(0,0,0,0.15);
+    }
+.card-respuesta {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-md);
+    padding: 2rem;
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+/* ===== VIDEO ===== */
+video {
+    width: 100%;
+    border-radius: var(--radius);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+/* ===== BUTTON ===== */
+.btn {
+    padding: 12px 24px;
+    border-radius: var(--radius);
+    border: none;
+    cursor: pointer;
+    background: var(--secondary);
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 700;
+    transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    margin-top: 1.5rem;
+    box-shadow: var(--btn-shadow);
+}
+
+    .btn:hover {
+        background: #23b58c;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 0 #1EA882;
+    }
+
+/* ===== RADIOBUTTON LIST ===== */
+.rdb-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 1rem;
+}
+
+    .rdb-container input[type="radio"] {
+        display: none;
+    }
+
+    .rdb-container label {
+        margin-bottom: 0.5rem;
+        padding: 0.75rem 1rem;
+        border-radius: 12px;
+        background: #f3f4f6;
+        cursor: pointer;
+        transition: all 0.2s ease;
+    }
+
+    .rdb-container input[type="radio"]:checked + label {
+        background: var(--primary);
+        color: #fff;
+    }
+
+/* ===== ERROR LABEL ===== */
+#LblError {
+    color: #ef4444;
+    font-weight: bold;
+    margin-top: 0.5rem;
+    text-align: center;
+}
+
+/* ===== FOOTER ===== */
+footer {
+    width: 100%;
+    background: linear-gradient(to bottom, #2C9BDB 0%, #104e8b 100%);
+    color: #fff;
+    padding: 1rem 2rem;
+    text-align: center;
+    border-radius: var(--radius) var(--radius) 0 0;
+    position: fixed;
+    bottom: 1px; /* distancia desde arriba */
+   left:0px;
+}
+
+    footer h2 {
+        font-size: 1rem;
+        font-weight: 500;
+        margin-bottom: 0.3rem;
+        opacity: 0.9;
+    }
+
+    footer p {
+        font-size: 0.85rem;
+        opacity: 0.8;
+    }
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    .card {
+        width: 90%;
+        padding: 1.5rem;
+    }
+
+    header, footer {
+        padding: 1rem;
+    }
+
+    main {
+        gap: 2rem;
+        padding: 1rem 0;
+    }
+}
