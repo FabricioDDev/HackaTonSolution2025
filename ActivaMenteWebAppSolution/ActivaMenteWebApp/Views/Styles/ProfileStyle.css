@@ -1,0 +1,164 @@
+﻿:root {
+    --primary: #6366f1;
+    --primary-hover: #4f46e5;
+    --secondary: #10b981;
+    --bg-body: #ffffff;
+    --bg-card: #f9fafb;
+    --text-main: #1f2937;
+    --text-muted: #6b7280;
+    --success: #10b981;
+    --danger: #ef4444;
+    --white: #ffffff;
+    --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
+    --radius: 12px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', 'Segoe UI', sans-serif;
+}
+
+body {
+    background-color: var(--bg-body);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    color: var(--text-main);
+}
+
+#form1 {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    background: linear-gradient(to bottom, #6366f1, #4f46e5);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--white);
+    box-shadow: var(--shadow-sm);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-radius: 0 0 var(--radius) var(--radius);
+}
+
+    header label {
+        font-size: 1.5rem;
+        font-weight: 700;
+    }
+
+    .back {
+        background-color: var(--secondary);
+        border: none;
+        padding: 8px 16px;
+        border-radius: var(--radius);
+        color: var(--white);
+        font-weight: 600;
+        cursor: pointer;
+        transition: background 0.3s ease;
+    }
+
+        header asp\:button:hover, header button:hover {
+            background-color: #059669;
+        }
+
+main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+.form {
+    background-color: var(--bg-card);
+    padding: 40px 30px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-md);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+}
+
+    .form label {
+        font-weight: 700;
+        color: var(--primary);
+        text-transform: uppercase;
+        font-size: 14px;
+        margin-bottom: 5px;
+        display: block;
+    }
+
+    .form asp\:textbox, .form input, .form select {
+        width: 100%;
+        padding: 12px 15px;
+        border: 2px solid #e0e0e0;
+        border-radius: var(--radius);
+        font-size: 15px;
+        outline: none;
+        transition: all 0.3s ease;
+        background: #fff;
+    }
+
+        .form asp\:textbox:focus, .form input:focus, .form select:focus {
+            border-color: var(--primary);
+            box-shadow: 0px 4px 10px rgba(99,102,241,0.2);
+        }
+
+    .form asp\:button, .form button {
+        background-color: var(--primary);
+        color: var(--white);
+        padding: 14px;
+        border: none;
+        border-radius: var(--radius);
+        font-weight: 700;
+        text-transform: uppercase;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+        .form asp\:button:hover, .form button:hover {
+            background-color: var(--primary-hover);
+            transform: translateY(2px);
+        }
+
+#LblWarning {
+    color: var(--danger);
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+footer {
+    background: linear-gradient(to bottom, #4f46e5, #6366f1);
+    text-align: center;
+    padding: 20px;
+    color: var(--white);
+}
+
+    footer h2 {
+        font-size: 14px;
+        font-weight: 400;
+        opacity: 0.9;
+        margin: 0;
+    }
+
+@media (max-width: 768px) {
+    main {
+        padding: 20px;
+    }
+
+    .form {
+        padding: 30px 20px;
+        max-width: 100%;
+    }
+}
