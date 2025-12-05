@@ -3,8 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\SysUser\\Documents\\GitHub\\HackaTonSolution2025\\ActivaMenteWebAppSolution\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{EF193E3A-A776-424B-93EC-57DB56FF3214}|ActivaMenteWebApp\\ActivaMenteWebApp.csproj|c:\\users\\sysuser\\documents\\github\\hackatonsolution2025\\activamentewebappsolution\\activamentewebapp\\views\\ranking.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{EF193E3A-A776-424B-93EC-57DB56FF3214}|ActivaMenteWebApp\\ActivaMenteWebApp.csproj|solutionrelative:activamentewebapp\\views\\ranking.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+      "AbsoluteMoniker": "D:0:0:{EF193E3A-A776-424B-93EC-57DB56FF3214}|ActivaMenteWebApp\\ActivaMenteWebApp.csproj|c:\\users\\sysuser\\documents\\github\\hackatonsolution2025\\activamentewebappsolution\\activamentewebapp\\views\\login.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{EF193E3A-A776-424B-93EC-57DB56FF3214}|ActivaMenteWebApp\\ActivaMenteWebApp.csproj|solutionrelative:activamentewebapp\\views\\login.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EF193E3A-A776-424B-93EC-57DB56FF3214}|ActivaMenteWebApp\\ActivaMenteWebApp.csproj|c:\\users\\sysuser\\documents\\github\\hackatonsolution2025\\activamentewebappsolution\\activamentewebapp\\data\\usuariodao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EF193E3A-A776-424B-93EC-57DB56FF3214}|ActivaMenteWebApp\\ActivaMenteWebApp.csproj|solutionrelative:activamentewebapp\\data\\usuariodao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EF193E3A-A776-424B-93EC-57DB56FF3214}|ActivaMenteWebApp\\ActivaMenteWebApp.csproj|c:\\users\\sysuser\\documents\\github\\hackatonsolution2025\\activamentewebappsolution\\activamentewebapp\\views\\ranking.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EF193E3A-A776-424B-93EC-57DB56FF3214}|ActivaMenteWebApp\\ActivaMenteWebApp.csproj|solutionrelative:activamentewebapp\\views\\ranking.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{EF193E3A-A776-424B-93EC-57DB56FF3214}|ActivaMenteWebApp\\ActivaMenteWebApp.csproj|c:\\users\\sysuser\\documents\\github\\hackatonsolution2025\\activamentewebappsolution\\activamentewebapp\\views\\default.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -15,8 +23,8 @@
       "RelativeMoniker": "D:0:0:{EF193E3A-A776-424B-93EC-57DB56FF3214}|ActivaMenteWebApp\\ActivaMenteWebApp.csproj|solutionrelative:activamentewebapp\\views\\default.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EF193E3A-A776-424B-93EC-57DB56FF3214}|ActivaMenteWebApp\\ActivaMenteWebApp.csproj|C:\\Users\\SysUser\\Documents\\GitHub\\HackaTonSolution2025\\ActivaMenteWebAppSolution\\activamentewebapp\\views\\login.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{EF193E3A-A776-424B-93EC-57DB56FF3214}|ActivaMenteWebApp\\ActivaMenteWebApp.csproj|solutionrelative:activamentewebapp\\views\\login.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+      "AbsoluteMoniker": "D:0:0:{EF193E3A-A776-424B-93EC-57DB56FF3214}|ActivaMenteWebApp\\ActivaMenteWebApp.csproj|c:\\users\\sysuser\\documents\\github\\hackatonsolution2025\\activamentewebappsolution\\activamentewebapp\\views\\ranking.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{EF193E3A-A776-424B-93EC-57DB56FF3214}|ActivaMenteWebApp\\ActivaMenteWebApp.csproj|solutionrelative:activamentewebapp\\views\\ranking.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,37 +34,37 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Ranking.aspx",
-              "DocumentMoniker": "C:\\Users\\SysUser\\Documents\\GitHub\\HackaTonSolution2025\\ActivaMenteWebAppSolution\\ActivaMenteWebApp\\Views\\Ranking.aspx",
-              "RelativeDocumentMoniker": "ActivaMenteWebApp\\Views\\Ranking.aspx",
-              "ToolTip": "C:\\Users\\SysUser\\Documents\\GitHub\\HackaTonSolution2025\\ActivaMenteWebAppSolution\\ActivaMenteWebApp\\Views\\Ranking.aspx",
-              "RelativeToolTip": "ActivaMenteWebApp\\Views\\Ranking.aspx",
-              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2025-12-05T16:17:18.941Z",
+              "DocumentIndex": 1,
+              "Title": "UsuarioDAO.cs",
+              "DocumentMoniker": "C:\\Users\\SysUser\\Documents\\GitHub\\HackaTonSolution2025\\ActivaMenteWebAppSolution\\ActivaMenteWebApp\\Data\\UsuarioDAO.cs",
+              "RelativeDocumentMoniker": "ActivaMenteWebApp\\Data\\UsuarioDAO.cs",
+              "ToolTip": "C:\\Users\\SysUser\\Documents\\GitHub\\HackaTonSolution2025\\ActivaMenteWebAppSolution\\ActivaMenteWebApp\\Data\\UsuarioDAO.cs*",
+              "RelativeToolTip": "ActivaMenteWebApp\\Data\\UsuarioDAO.cs*",
+              "ViewState": "AQIAADIAAAAAAAAAAAAAAGoAAAAaAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-05T19:00:03.287Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "Default.aspx.cs",
               "DocumentMoniker": "C:\\Users\\SysUser\\Documents\\GitHub\\HackaTonSolution2025\\ActivaMenteWebAppSolution\\ActivaMenteWebApp\\Views\\Default.aspx.cs",
               "RelativeDocumentMoniker": "ActivaMenteWebApp\\Views\\Default.aspx.cs",
               "ToolTip": "C:\\Users\\SysUser\\Documents\\GitHub\\HackaTonSolution2025\\ActivaMenteWebAppSolution\\ActivaMenteWebApp\\Views\\Default.aspx.cs",
               "RelativeToolTip": "ActivaMenteWebApp\\Views\\Default.aspx.cs",
-              "ViewState": "AQIAABIAAAAAAAAAAAAAABgAAAANAAAA",
+              "ViewState": "AQIAABcAAAAAAAAAAAAAAC8AAAAuAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-05T16:01:16.123Z",
+              "WhenOpened": "2025-12-05T19:00:19.567Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "Default.aspx",
               "DocumentMoniker": "C:\\Users\\SysUser\\Documents\\GitHub\\HackaTonSolution2025\\ActivaMenteWebAppSolution\\ActivaMenteWebApp\\Views\\Default.aspx",
               "RelativeDocumentMoniker": "ActivaMenteWebApp\\Views\\Default.aspx",
@@ -64,12 +72,38 @@
               "RelativeToolTip": "ActivaMenteWebApp\\Views\\Default.aspx",
               "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2025-12-05T16:00:17.94Z",
+              "WhenOpened": "2025-12-05T19:00:16.757Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
+              "Title": "Ranking.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\SysUser\\Documents\\GitHub\\HackaTonSolution2025\\ActivaMenteWebAppSolution\\ActivaMenteWebApp\\Views\\Ranking.aspx.cs",
+              "RelativeDocumentMoniker": "ActivaMenteWebApp\\Views\\Ranking.aspx.cs",
+              "ToolTip": "C:\\Users\\SysUser\\Documents\\GitHub\\HackaTonSolution2025\\ActivaMenteWebAppSolution\\ActivaMenteWebApp\\Views\\Ranking.aspx.cs",
+              "RelativeToolTip": "ActivaMenteWebApp\\Views\\Ranking.aspx.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAhAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-05T18:58:01.798Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Ranking.aspx",
+              "DocumentMoniker": "C:\\Users\\SysUser\\Documents\\GitHub\\HackaTonSolution2025\\ActivaMenteWebAppSolution\\ActivaMenteWebApp\\Views\\Ranking.aspx",
+              "RelativeDocumentMoniker": "ActivaMenteWebApp\\Views\\Ranking.aspx",
+              "ToolTip": "C:\\Users\\SysUser\\Documents\\GitHub\\HackaTonSolution2025\\ActivaMenteWebAppSolution\\ActivaMenteWebApp\\Views\\Ranking.aspx",
+              "RelativeToolTip": "ActivaMenteWebApp\\Views\\Ranking.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2025-12-05T18:42:44.063Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
               "Title": "LogIn.aspx",
               "DocumentMoniker": "C:\\Users\\SysUser\\Documents\\GitHub\\HackaTonSolution2025\\ActivaMenteWebAppSolution\\ActivaMenteWebApp\\Views\\LogIn.aspx",
               "RelativeDocumentMoniker": "ActivaMenteWebApp\\Views\\LogIn.aspx",
@@ -77,7 +111,7 @@
               "RelativeToolTip": "ActivaMenteWebApp\\Views\\LogIn.aspx",
               "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2025-12-04T13:06:01.829Z",
+              "WhenOpened": "2025-12-05T18:41:50.855Z",
               "EditorCaption": ""
             }
           ]

@@ -22,6 +22,7 @@ namespace ActivaMenteWebApp.Views
                 Usuario user = new Usuario();
                 user = (Usuario)Session["Usuario"];
                 LblUserName.Text = user.NombreUsuario + "!";
+                LblTotalPoints.Text = user.PuntosTotales.ToString();
             }
         }
 
@@ -40,6 +41,11 @@ namespace ActivaMenteWebApp.Views
         {
             int gameId = 1;
             Response.Redirect($"~/Views/LevelGame.aspx?game={gameId}", false);
+        }
+
+        protected void BtnRanking_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Views/Ranking.aspx", false);
         }
     }
 }

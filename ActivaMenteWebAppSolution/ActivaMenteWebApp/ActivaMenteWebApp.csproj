@@ -73,8 +73,11 @@
     <Content Include="Views\GameResult.aspx" />
     <Content Include="Views\LevelGame.aspx" />
     <Content Include="Views\LogIn.aspx" />
+    <Content Include="Views\Multi\logo.png" />
     <Content Include="Views\Profile.aspx" />
     <Content Include="Views\Ranking.aspx" />
+    <Content Include="Views\Multi\rtaP1.mp4" />
+    <Content Include="Views\Multi\rtaP2.mp4" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

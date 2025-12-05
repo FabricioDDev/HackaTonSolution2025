@@ -13,7 +13,8 @@
         <asp:Button ID="BtnLogOut" runat="server" Text="Cerrar sesion" OnClick="BtnLogOut_Click" />
         <asp:Button ID="BtnProfile" runat="server" Text="Profile" OnClick="BtnProfile_Click" />
         <label>dashboard</label>
-        <asp:Button ID="BtnRanking" runat="server" Text="Ranking" />
+        <asp:Label ID="LblTotalPoints" runat="server" Text=""></asp:Label>
+        <asp:Button ID="BtnRanking" runat="server" Text="Ranking" OnClick="BtnRanking_Click" />
         <asp:Button ID="BtnGame1" runat="server" Text="Game 1" OnClick="BtnGame1_Click" />
         <asp:Button ID="BtnGame2" runat="server" Text="Proximamente mas niveles!" Enabled="false" />
 

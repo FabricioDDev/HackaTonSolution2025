@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
+using Business;   // tu namespace donde está GetRanking()
 
 namespace ActivaMenteWebApp.Views
 {
@@ -11,7 +7,18 @@ namespace ActivaMenteWebApp.Views
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack)
+                CargarRanking();
+        }
 
+        void CargarRanking()
+        {
+            UsuarioBLL negocio = new UsuarioBLL();
+
+            var lista = negocio.getRanking();  // método corregido anteriormente
+
+            gvRanking.DataSource = lista;
+            gvRanking.DataBind();
         }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using ActivaMenteWebApp.Entities;
 using Data;
 using System;
+using System.Collections.Generic;
 
 namespace Business
 {
@@ -15,22 +16,17 @@ namespace Business
 
             return dao.Login(username, password, ref userEncontrado);
         }
-
-      /*  public void Register(Usuario u)
+        public List<Usuario> getRanking()
         {
-            if (string.IsNullOrWhiteSpace(u.NombreUsuario))
-                throw new Exception("Usuario requerido");
-
-            if (string.IsNullOrWhiteSpace(u.Contrasenia))
-                throw new Exception("Contraseña requerida");
-
-            u.FechaRegistro = DateTime.Now;
-
-            dao.Insert(u);
-        }*/
+            return dao.GetRanking();
+        }
       public bool UpdateUsuario(Usuario usuario)
         {
             return dao.Update(usuario);
+        }
+        public bool UpdatePoints(int idUser, int points)
+        {
+            return dao.UpdatePoints(idUser, points);
         }
     }
 }
