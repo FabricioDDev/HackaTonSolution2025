@@ -5,7 +5,9 @@
 <head runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Ranking Global</title>
+    <link href="Styles/RankingStyles.css" rel="stylesheet" />
 </head>
+
 <body>
     <form id="form1" runat="server">
 
@@ -26,6 +28,7 @@
 
             </Columns>
         </asp:GridView>
+        <asp:Button ID="BtnBack" runat="server" Text="Volver" OnClick="BtnBack_Click" CssClass="btn" />
 
     </form>
 </body>

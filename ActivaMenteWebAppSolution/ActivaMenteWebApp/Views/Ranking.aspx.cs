@@ -20,5 +20,10 @@ namespace ActivaMenteWebApp.Views
             gvRanking.DataSource = lista;
             gvRanking.DataBind();
         }
+
+        protected void BtnBack_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Views/Default.aspx", false);
+        }
     }
 }

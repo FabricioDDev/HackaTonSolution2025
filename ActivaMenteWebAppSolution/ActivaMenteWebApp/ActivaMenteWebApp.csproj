@@ -85,9 +85,11 @@
     <Content Include="Views\Multi\rtaP2.mp4" />
     <Content Include="Views\Styles\DefaultStyle.css" />
     <Content Include="Views\Styles\Game1Styles.css" />
+    <Content Include="Views\Styles\GameResultStyles.css" />
     <Content Include="Views\Styles\LevelGameStyles.css" />
     <Content Include="Views\Styles\LogInStyles.css" />
     <Content Include="Views\Styles\ProfileStyle.css" />
+    <Content Include="Views\Styles\RankingStyles.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
