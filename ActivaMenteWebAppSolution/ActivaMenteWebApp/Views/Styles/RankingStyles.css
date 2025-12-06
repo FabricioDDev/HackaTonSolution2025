@@ -1,0 +1,134 @@
+﻿/* --- VARIABLES Y RESET --- */
+:root {
+    --primary: #6366f1; /* Indigo moderno */
+    --primary-hover: #4f46e5;
+    --secondary: #ec4899; /* Rosa vibrante */
+    --bg-body: #f3f4f6; /* Gris muy suave */
+    --bg-card: #ffffff;
+    --text-main: #1f2937;
+    --text-muted: #6b7280;
+    --success: #10b981;
+    --danger: #ef4444;
+    --white: #ffffff;
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --radius: 12px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', 'Segoe UI', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #2CD3DB, #2C9BDB);
+    color: var(--text-main);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* --- FORM --- */
+#form1 {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 1rem;
+}
+
+/* --- TÍTULO --- */
+h1 {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #2C63DB;
+    margin-bottom: 2rem;
+    text-align: center;
+    border-left: 5px solid #2CDBA9;
+    padding-left: 1rem;
+}
+
+/* --- GRID PARA EL RANKING --- */
+#gvRanking {
+    width: 100%;
+    max-width: 800px;
+    border-collapse: collapse;
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    background-color: rgba(255, 255, 255, 0.95);
+}
+
+    #gvRanking th, #gvRanking td {
+        padding: 12px 15px;
+        text-align: center;
+        border-bottom: 1px solid #E5E7EB;
+    }
+
+    #gvRanking th {
+        background-color: #2C63DB;
+        color: var(--white);
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+
+    #gvRanking tr:nth-child(even) {
+        background-color: rgba(44, 211, 219, 0.1);
+    }
+
+    #gvRanking tr:hover {
+        background-color: rgba(44, 211, 219, 0.2);
+        transform: scale(1.02);
+        transition: all 0.2s ease;
+    }
+.btn {
+    width: 30%;
+    background: #2CDBA9;
+    color: #fff;
+    padding: 14px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+    box-shadow: 0px 4px 0px #1EA882; /* Efecto 3D botón presionado */
+}
+
+/* --- FOOTER --- */
+footer {
+    background: linear-gradient(to bottom, #2C9BDB 0%, #104e8b 100%);
+    padding: 20px;
+    text-align: center;
+    color: white;
+}
+
+    footer h2 {
+        font-size: 14px;
+        font-weight: 400;
+        opacity: 0.9;
+    }
+
+/* --- RESPONSIVE --- */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 1.5rem;
+        padding-left: 0.5rem;
+        border-left: 3px solid #2CDBA9;
+    }
+
+    #gvRanking th, #gvRanking td {
+        padding: 10px 8px;
+        font-size: 0.85rem;
+    }
+
+    #form1 {
+        padding: 1rem;
+    }
+}

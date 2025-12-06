@@ -28,7 +28,7 @@ namespace ActivaMenteWebApp.Views
 
         protected void btnVolver_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/Views/Default.aspx");
+            Response.Redirect("~/Views/Ranking.aspx");
         }
     }
 }

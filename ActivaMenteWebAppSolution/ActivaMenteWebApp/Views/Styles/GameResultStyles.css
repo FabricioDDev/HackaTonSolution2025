@@ -1,0 +1,128 @@
+﻿/* --- VARIABLES --- */
+:root {
+    --primary: #6366f1; /* Indigo */
+    --primary-hover: #4f46e5;
+    --secondary: #2CDBA9; /* Aqua */
+    --bg-body: #f3f4f6; /* Gris claro */
+    --bg-card: #ffffff;
+    --text-main: #1f2937;
+    --text-muted: #6b7280;
+    --success: #10b981;
+    --danger: #ef4444;
+    --white: #ffffff;
+    --shadow-md: 0 10px 25px rgba(0, 77, 125, 0.15);
+    --radius: 16px;
+}
+
+/* --- RESET --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', 'Segoe UI', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(135deg, #2CD3DB, #2C9BDB);
+    color: var(--text-main);
+}
+
+/* --- FORM Y CONTENEDOR --- */
+#form1 {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 40px 30px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-md);
+    text-align: center;
+    min-width: 300px;
+    max-width: 500px;
+    animation: fadeIn 0.5s ease-in-out;
+    backdrop-filter: blur(10px);
+}
+
+    /* --- TÍTULO --- */
+    .container h2 {
+        font-size: 2rem;
+        font-weight: 800;
+        color: #2C63DB;
+        margin-bottom: 1.5rem;
+    }
+
+/* --- MENSAJE DE PUNTAJE --- */
+.puntaje {
+    display: block;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--secondary);
+    margin-bottom: 2rem;
+}
+
+/* --- BOTÓN --- */
+.btn {
+    background-color: var(--secondary);
+    color: var(--white);
+    padding: 14px 25px;
+    border: none;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0px 4px 0px #1EA882;
+}
+
+    .btn:hover {
+        background-color: #23b58c;
+        transform: translateY(2px);
+        box-shadow: 0px 2px 0px #1EA882;
+    }
+
+    .btn:active {
+        transform: translateY(1px);
+        box-shadow: 0px 1px 0px #1EA882;
+    }
+
+/* --- ANIMACIÓN DE ENTRADA --- */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 480px) {
+    .container {
+        padding: 25px 20px;
+    }
+
+        .container h2 {
+            font-size: 1.5rem;
+        }
+
+    .puntaje {
+        font-size: 1.4rem;
+    }
+
+    .btn {
+        font-size: 0.9rem;
+        padding: 12px 20px;
+    }
+}
