@@ -29,6 +29,15 @@
             .btn-primary:hover {
                 background-color: #45a049;
             }
+
+        .resaltar {
+            color: red;
+            font-weight: bold;
+        }
+
+            .resaltar:hover {
+                text-decoration: underline;
+            }
     </style>
 </head>
 
@@ -50,6 +59,11 @@
 
             <asp:Button ID="BtnLogIn" runat="server" Text="Entrar"
                 CssClass="btn btn-primary w-100" OnClick="BtnLogIn_Click" />
+
+            <br />
+            <asp:Literal ID="LitRegistration" runat="server"
+                Text="No tenés cuenta? <a href='Register.aspx' class='resaltar'>Registrate</a>">
+            </asp:Literal>
 
             <asp:Label ID="LblWarning" runat="server" Text="" CssClass="text-danger mt-2"></asp:Label>
         </div>
