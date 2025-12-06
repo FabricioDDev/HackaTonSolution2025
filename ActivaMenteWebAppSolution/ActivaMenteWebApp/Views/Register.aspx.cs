@@ -18,6 +18,31 @@ namespace ActivaMenteWebApp.Views
 
         protected void BtnRegistrarse_Click(object sender, EventArgs e)
         {
+            if (TxtNombre.Text == "" || TxtApellido.Text == "" || TxtEmail.Text == "" ||
+                TxtUsuario.Text == "" || TxtPass.Text == "" || TxtPass2.Text == "")
+            {
+                LblMensaje.Text = "Por favor completa todos los campos obligatorios.";
+                return;
+            }
+
+            if (TxtPass.Text != TxtPass2.Text)
+            {
+                LblMensaje.Text = "Las contraseñas no coinciden.";
+                return;
+            }
+
+            if (EmailExiste(TxtEmail.Text))
+            {
+                LblMensaje.Text = "El email ya está registrado.";
+                return;
+            }
+
+            if (UsuarioExiste(TxtUsuario.Text))
+            {
+                LblMensaje.Text = "El nombre de usuario ya existe.";
+                return;
+            }
+
             int idPersona = InsertarPersona();
             if (idPersona <= 0)
             {
